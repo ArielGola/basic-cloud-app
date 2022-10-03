@@ -1,0 +1,44 @@
+<div>
+    <div>
+        <h4>Upload:</h4>
+        <form id="form" action="/upload/" method="POST" name="file" enctype="multipart/form-data">
+            <input id="input" type="file" name="file">
+        </form>
+        <button id="upbtn">Upload</button>
+        <dir></dir>
+    </div>
+    <dir></dir>
+    <div>
+        <h4>Create Directory:</h4>
+        <form id="dir" action="/dir/" method="POST" name="name" title="name">
+            <input type="text" id="dirinput">
+        </form>
+        <button id="dirmake">Create</button>
+        <dir></dir>
+    </div>
+    <dir></dir>
+    <div>
+        <h4>Directories:</h4>
+        <ul>
+            {{#each content.directories}}
+                <li>
+                    <a href="/content/{{this}}">{{this}}</a>
+                </li>
+                <dir></dir>
+            {{/each}}
+        </ul>
+    </div>
+    <dir></dir>
+    <div>
+        <h4>Files:</h4>
+        <ul>
+            {{#each content.files}}
+                <li>
+                    <a href="/download/{{this}}">{{this}}</a>
+                    <a href="/destroy/{{this}}">[Delete]</a>
+                </li>
+                <dir></dir>
+            {{/each}}
+        </ul>
+    </div>
+</div>
